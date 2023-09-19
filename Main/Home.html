@@ -1,38 +1,41 @@
 <!DOCTYPE html>
-<html style="background-color:#000;">
+<html>
 
 <head>
     <title>Codebreaker</title>
     <style>
+        .bg {
+            background-image: url("Background.png");
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
         h1 {
-            color: #000;
-            border: #fff 10px solid;
-            background-color: #fff;
-            margin: 100px 500px 100px;
+            color: #fff;
+            margin: 0px 500px 70px;
             text-align: center;
             font-family: courier;
             font-size: 400%;
         }
 
         h2 {
-            color: #000;
-            background-color: #fff;
+            color: #fff;
             margin: 50px 500px 50px;
             text-align: center;
             font-family: courier;
         }
 
         h3 {
-            color: #000;
-            background-color: #fff;
+            color: #fff;
             margin: 50px 375px 50px;
             text-align: center;
             font-family: courier;
             font-size: 250%;
         }
+
         h4 {
-            color: #000;
-            background-color: #fff;
             margin: 50px 800px 50px;
             text-align: center;
             font-family: courier;
@@ -41,13 +44,15 @@
     </style>
 </head>
 
-<body>
-
+<body class="bg">
+    <center>
+        <img src="Lock.png" alt="Lock Image" width="300" height="300">
+    </center>
     <h1> Welcome to Codebreaker </h1>
     <h2>
         <center>
             As an international sneak thief, you break into vaults all the time. Riddling out a simple 3 digit
-            code is child's play for you.But you must be getting sloppy in your old age because you've
+            code is child's play for you. But you must be getting sloppy in your old age because you've
             tripped an alarm. In no time at all, the police will be all over the place.
         </center>
     </h2>
@@ -57,7 +62,9 @@
         </center>
     </h3>
     <h4>
-        <a href="Game.html">PLAY</a>
+        <a href="Game.html">
+            <img src="Start.png" alt="Start Icon" width="250" height="114">
+        </a>
     </h4>
 
 </body>
