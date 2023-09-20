@@ -1,61 +1,64 @@
 <!DOCTYPE html>
 <html>
-	<head> 
-		<title>Codebreaker</title>
-		<style>
-			.bg {
-				background-image: url("Background.png");
-				height: 100%;
-				width: 100%;
-				position: absolute;
-				background-repeat: no-repeat;
-				background-size: cover;
-			}
 
-			h1 {
-				color: #fff;
-				text-align: center;
-				position: center;
-				font-family: courier;
-				font-size: 350%;
-			}
+<head>
+	<title>Codebreaker</title>
+	<style>
+		.bg {
+			background-image: url("Background.png");
+			height: 99%;
+			width: 99%;
+			position: absolute;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
 
-			h2 {
-				color: #fff;
-				margin: 50px 500px 50px;
-				text-align: center;
-				font-family: courier;
-			}
+		h1 {
+			color: #fff;
+			margin: 0% 20% 2%;
+			text-align: center;
+			font-family: courier;
+			font-size: 300%;
+		}
 
-			h3 {
-				color: #fff;
-				margin: 50px 375px 50px;
-				text-align: center;
-				font-family: courier;
-				font-size: 250%;
-			}
+		h2 {
+			color: #fff;
+			margin: 2% 20% 2%;
+			text-align: center;
+			font-family: courier;
+			font-size: 120%;
+		}
+
+		h3 {
+			color: #fff;
+			margin: 2% 10% 2%;
+			text-align: center;
+			font-family: courier;
+			font-size: 250%;
+		}
 			var {
 				font-style: normal;
 			}
-		</style>
-		<script> 
-			function initialize()
-		{
-		thing = document.getElementById("1");
-		
-				stages = ["🚓 _ _ _ _ _ _","_ 🚓 _ _ _ _ _", "_ _ 🚓 _ _ _ _", "_ _ _ 🚓 _ _ _", "_ _ _ _ 🚓 _ _", "_ _ _ _ _ 🚓 _", "_ _ _ _ _ _ 🚓"];
-				stage = 0;
-				display();
-			}
-			function display(){
-			thing.innerHTML = stages[stage];	
-			}
-		</script>
-	</head>
-	<body class="bg" onload="initialize();"> 
-		<center>
-			<img src="Lock.png" alt="Lock Image" width="200" height="200">
-		</center>
-		<h1 id="1"></h1>
-	</body>
+	</style>
+	<script>
+		function initialize() {
+			thing = document.getElementById("1");
+
+			stages = ["🚓 _ _ _ _ _ _", "_ 🚓 _ _ _ _ _", "_ _ 🚓 _ _ _ _", "_ _ _ 🚓 _ _ _", "_ _ _ _ 🚓 _ _", "_ _ _ _ _ 🚓 _", "_ _ _ _ _ _ 🚓"];
+			stage = 0;
+			display();
+		}
+		function display() {
+			thing.innerHTML = stages[stage];
+		}
+	</script>
+</head>
+
+<body class="bg" onload="initialize();">
+	<center>
+		<img src="Lock.png" alt="Lock Image" width="200" height="200">
+	</center>
+	<h1 id="1"></h1>
+</body>
+
 </html>
