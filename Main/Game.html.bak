@@ -14,10 +14,11 @@
 
 			h1 {
 				color: #fff;
+				margin: 0px 500px 70px;
 				text-align: center;
-				position: center;
+				position: absolute;
 				font-family: courier;
-				font-size: 350%;
+				font-size: 400%;
 			}
 
 			h2 {
