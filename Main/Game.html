@@ -61,6 +61,9 @@
 		}
 		function increment() {
 			stage++;
+			if (stage > 6) {
+				window.location.href = "Lose.html";
+			}
 			display();
 		}
 		function display() {
