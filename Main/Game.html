@@ -34,11 +34,13 @@
 			font-family: courier;
 			font-size: 1000%;
 		}
+
 		button {
 			border: none;
-        	cursor: pointer;
-        	background-color: inherit;
+			cursor: pointer;
+			background-color: inherit;
 		}
+
 		var {
 			font-style: normal;
 		}
@@ -47,10 +49,14 @@
 		function initialize() {
 			docStage = document.getElementById("stage");
 			docInput = document.getElementById("input");
+			lockCombo = [Math.floor(Math.random() * 3) + 1, Math.floor(Math.random() * 3) + 1, Math.floor(Math.random() * 3) + 1];
+			oneLocked = false;
+			twoLocked = false;
+			threeLocked = false;
 
 			stages = ["🚓 _ _ _ _ _ _", "_ 🚓 _ _ _ _ _", "_ _ 🚓 _ _ _ _", "_ _ _ 🚓 _ _ _", "_ _ _ _ 🚓 _ _", "_ _ _ _ _ 🚓 _", "_ _ _ _ _ _ 🚓"];
 			stage = 0;
-			inputs = [1,1,1];
+			inputs = [1, 1, 1];
 			display();
 		}
 		function increment() {
@@ -103,6 +109,40 @@
 			}
 			display();
 		}
+		function inputGuess() {
+			if (inputs[0] == lockCombo[0]) {
+				oneLocked = true;
+				element = document.getElementById('topOne');
+				element.style.opacity = "0";
+				element = document.getElementById('bottomOne');
+				element.style.opacity = "0";
+			} else {
+				inputs[0] = 1;
+			}
+			if (inputs[1] == lockCombo[1]) {
+				twoLocked = true;
+				element = document.getElementById('topTwo');
+				element.style.opacity = "0";
+				element = document.getElementById('bottomTwo');
+				element.style.opacity = "0";
+			} else {
+				inputs[1] = 1;
+			}
+			if (inputs[2] == lockCombo[2]) {
+				threeLocked = true;
+				element = document.getElementById('topThree');
+				element.style.opacity = "0";
+				element = document.getElementById('bottomThree');
+				element.style.opacity = "0";
+			} else {
+				inputs[2] = 1;
+			}
+			if (oneLocked && twoLocked && threeLocked) {
+				window.location.href = "Win.html";
+			} else {
+				increment();
+			}
+		}
 	</script>
 </head>
 
@@ -113,25 +153,25 @@
 	<h1 id="stage"></h1>
 	<center>
 		<div>
-			<button onclick="incrementOne()" style="margin: 0% 1% 0%;"><img src="Top.png" alt="Submit"/></button>
-			<button onclick="incrementTwo()" style="margin: 0% 5% 0%;"><img src="Top.png" alt="Submit"/></button>
-			<button onclick="incrementThree()" style="margin: 0% 1% 0%;"><img src="Top.png" alt="Submit"/></button>
+			<button id="topOne" onclick="incrementOne()" style="margin: 0% 1% 0%;"><img src="Top.png" alt="Submit" /></button>
+			<button id="topTwo"  onclick="incrementTwo()" style="margin: 0% 5% 0%;"><img src="Top.png" alt="Submit" /></button>
+			<button id="topThree"  onclick="incrementThree()" style="margin: 0% 1% 0%;"><img src="Top.png" alt="Submit" /></button>
 		</div>
 	</center>
 	<h3 id="input" style="margin: 0% 0% 0%;"></h3>
 	<center>
 		<div>
-			<button onclick="decrementOne()" style="margin: 0% 1% 0%;"><img src="Bottom.png" alt="Submit"/></button>
-			<button onclick="decrementTwo()" style="margin: 0% 5% 0%;"><img src="Bottom.png" alt="Submit"/></button>
-			<button onclick="decrementThree()" style="margin: 0% 1% 0%;"><img src="Bottom.png" alt="Submit"/></button>
+			<button id="bottomOne" onclick="decrementOne()" style="margin: 0% 1% 0%;"><img src="Bottom.png" alt="Submit" /></button>
+			<button id="bottomTwo" onclick="decrementTwo()" style="margin: 0% 5% 0%;"><img src="Bottom.png" alt="Submit" /></button>
+			<button id="bottomThree" onclick="decrementThree()" style="margin: 0% 1% 0%;"><img src="Bottom.png" alt="Submit" /></button>
 		</div>
 	</center>
 	<center>
-		<button onclick="increment();" style="margin-top: 3%;">
-			<img src="Submit.png" alt="Submit" width="320" height="135"/>
+		<button onclick="inputGuess();" style="margin-top: 3%;">
+			<img src="Submit.png" alt="Submit" width="320" height="135" />
 		</button>
 	</center>
-	
+
 </body>
 
 </html>
